@@ -35,7 +35,7 @@ class Config():
         self.enable_logging = self.config['Logging']['enable'].lower() in true_answ
         self.logging_chat = self.config['Logging']['chat']
 
-        self.enable_filter = self.config['Filter']['enable']
+        self.enable_filter = self.config['Filter']['enable'] in true_answ
         self.allowed_chats = self.config['Filter']['chats'].replace(" ", "").split(",")
 
         self.telegram_bot_api_server = self.config['Server']['bot_api']
