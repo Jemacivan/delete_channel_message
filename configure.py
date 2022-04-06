@@ -1,6 +1,7 @@
 import os.path
 from configparser import ConfigParser
 
+
 CONFIG_FILE = './config.ini'
 
 class Config():
@@ -35,11 +36,11 @@ class Config():
         self.enable_logging = self.config['Logging']['enable'].lower() in true_answ
         self.logging_chat = self.config['Logging']['chat']
 
-        self.enable_filter = self.config['Filter']['enable'] in true_answ
+        self.enable_filter = self.config['Filter']['enable'].lower() in true_answ
         self.allowed_chats = self.config['Filter']['chats'].replace(" ", "").split(",")
 
         self.telegram_bot_api_server = self.config['Server']['bot_api']
-        self.use_webhook = self.config['Server']['use_webhook'] in true_answ
+        self.use_webhook = self.config['Server']['use_webhook'].lower() in true_answ
         self.ip = self.config['Server']['ip']
         self.port = self.config['Server']['port']
 
